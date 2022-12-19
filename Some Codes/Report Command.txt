@@ -1,0 +1,29 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$if[$message!=]
+$title[ - Reporte - ]
+$color[123456]
+$description[¡Tu reporte ha sido enviado con exito! 
+ 
+Nos pondremos en contacto contigo cuanto antes
+
+*Si necesitas ayuda urgente puedes entra al servidor oficial con **/support***]
+$footer[$serverName[$guildID] | $username#$discriminator[$authorID]]
+$footerIcon[$serverIcon]
+$sendEmbedMessage[1013812217403162675;<@355064229948162049>;Reporte de $username;;**Reporte:** $message
+ 
+**Usuario:** $username#$discriminator[$authorID]
+ 
+**Servidor:** $serverName[$guildID] ($guildID) 
+
+;123456;;;$serverName[$guildID] $addTimestamp;;;;]
+
+$else
+$reply
+¡Debes añadir una pequeña descripción de la razón del reporte!
+$endif

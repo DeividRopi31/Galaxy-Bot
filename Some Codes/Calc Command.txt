@@ -1,0 +1,22 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$authorIcon[https://media.discordapp.net/attachments/891518310439591956/908936154508828692/IMG_20211112_222142.png]
+$author[Calculando]
+$addField[**Ecuación**;`$message`]
+$addField[**Resultado**;`$calculate[$message]`]
+$footer[Calculadora de $username[$botID]]
+$color[55555]
+$thumbnail[$authorAvatar]
+$footerIcon[$userAvatar[$botID]]
+
+$argsCheck[>1;:warning: - Porfavor introduce un problema matemático. Este comando solo puede contener estos simbolos: 
+`/` **Si quieres dividir números** 
+`*` **Si quieres multiplicar números**
+`+` **Si quieres sumar números**
+`-` **Si quieres restar números**. Ejemplo: `2/3`.**]
+
+$suppressErrors

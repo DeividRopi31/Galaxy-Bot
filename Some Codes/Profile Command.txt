@@ -1,0 +1,34 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$onlyIf[$isBot[$mentioned[1;yes]]==false;No puedes mirar los perfiles de los bots]
+$if[$message[1]==bio]
+$awaitFunc[bio]
+Escribe tu nueva Bio después de este mensaje
+$else
+$textSplit[$getVar[ing;$mentioned[1;yes]];|]
+$title[Perfil de $username[$mentioned[1;yes]]]
+$footer[Pedido por $username[$authorID] $addTimestamp]
+$footerIcon[$authorAvatar]
+$thumbnail[$userAvatar[$mentioned[1;yes]]]
+$description[
+**✏️ Bio**
+```$getVar[bio;$mentioned[1;yes]]```
+ 
+**🔮 Experiencia**
+```Nivel: $getVar[level;$mentioned[1;yes]]  ($getVar[currentxp;$mentioned[1;yes]]/$getVar[nextlevelxp;$mentioned[1;yes]])```
+
+**🖥 Tipo de cuenta**
+```$getVar[cuenta;$mentioned[1;yes]]```
+ 
+**🎖 Insignias**
+```$if[$getVar[ing;$mentioned[1;yes]]==0|0|0|0|0|0|0|0|0|0]Este usuarios aún no tiene ninguna Insignia $endif
+$if[$splitText[1]==1]🔰 Aliado $endif
+$if[$splitText[2]==1]💻 Prueba $endif
+```
+]
+$endif

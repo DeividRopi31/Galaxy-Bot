@@ -1,0 +1,49 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$deletecommand
+$onlyIf[$checkUserPerms[$authorID;managemessages]==true;No tienes los permisos suficientes para ejecutar este comando]
+$textSplit[$message;|]
+$if[$message[1]!=]
+
+$if[$getTextSplitLength==4]
+
+$title[$splitText[1]]
+$description[$splitText[2]]
+$color[$splitText[3]]
+$footer[$splitText[4]]
+
+
+$elseif[$getTextSplitLength==3]
+
+$title[$splitText[1]]
+$description[$splitText[2]]
+$color[$splitText[3]]
+
+
+$elseif[$getTextSplitLength==2]
+
+$title[$splitText[1]]
+$description[$splitText[2]]
+
+
+$elseif[$getTextSplitLength==1]
+
+$title[$splitText[1]]
+
+
+$endif
+$else
+$title[Guia del creador de embeds]
+$description[Para usar este comando siga la siguiente plantilla:
+ 
+/embed {título}|{descripción}|{color_hexadecimal}|{footer}]
+$color[ff0800]
+$endif
+$embedSuppressErrors[Guia del creador de embed;Para usar este comando siga la siguiente plantilla:
+ 
+/embed {título}|{descripción}|{color_hexadecimal}|{footer};ff0800;;;]

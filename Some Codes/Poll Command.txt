@@ -1,0 +1,14 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$deletecommand
+$onlyIf[$message!=;Escribe algo para hacer la encuesta]
+$title[Encuesta de $username]
+$addReactions[👍;👎]
+$description[$message] 
+$footer[👍  -  👎] 
+$color[826104]

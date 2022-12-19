@@ -1,0 +1,20 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$title[❤  Comprobador de Amor  ❤]
+$description[ 
+$random[0;100]% de probabilidades de que suceda algo entre ambos.
+]
+$image[https://api.alexflipnote.dev/ship?user=$userAvatar[$mentioned[1]]&user2=$userAvatar[$mentioned[2]]]
+$onlyIf[$mentioned[1]!=;
+Debes mencionar a 2 usuarios
+]
+$onlyIf[$mentioned[2]!=;
+Debes mencionar a 2 usuarios
+]
+$suppressErrors
+$color[ff0000]

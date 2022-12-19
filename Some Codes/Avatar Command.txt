@@ -1,0 +1,12 @@
+Language: BDScript 2
+
+
+Code:
+
+$suppressErrors
+$image[$userAvatar[$mentioned[1;yes]]?size=2048]
+$color[572364]
+$title[Avatar de **$username[$mentioned[1;yes]]**]
+$allowMention
+
+$nomention

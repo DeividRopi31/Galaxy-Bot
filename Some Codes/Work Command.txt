@@ -1,0 +1,16 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$globalCooldown[240s;
+Tienes que esperar **$if[$divide[$getCooldown[global];3600]>0]$divide[$getCooldown[global];3600]h$endif $if[$sub[$divide[$getCooldown[global];60];$calculate[$divide[$getCooldown[global];3600] * 60]]>0]$sub[$divide[$getCooldown[global];60];$calculate[$divide[$getCooldown[global];3600] * 60]]m$endif $sub[$getCooldown[global];$calculate[$divide[$getCooldown[global];60] * 60]]s** más para poder volver a trabajar]
+
+$var[ganado;$random[50;120]]
+$setVar[money;$sum[$getVar[money;$authorID];$var[ganado]];$authorID]
+$title[$nickname]
+$description[$randomText[Gracias a tú duro trabajo has ganado;Por tu trabajo te han dado;Por tu esfuerzo has sido recompensado con;Por tu arduo esfuerzo has recibido;Por este trabajo has recibido;Gracias s tu trabajo te han recompensado con] $var[ganado]<:moneda_galaxy:1032384306380816404>]
+$thumbnail[$userAvatar[$authorID]]
+$color[123456]

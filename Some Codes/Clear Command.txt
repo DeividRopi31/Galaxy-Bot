@@ -1,0 +1,14 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$deletecommand
+$onlyIf[$checkUserPerms[$authorID;managemessages]==true;No tienes los permisos suficientes para ejecutar este comando]
+$onlyIf[$isNumber[$message]==true;¡Solo se pueden introducir números!]
+$deleteIn[3s]
+Se han borrado [$message] mensajes.
+$clear[$message[1]]
+$endif

@@ -1,0 +1,20 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$onlyIf[$checkUserPerms[$authorID;ban]==true;No tienes los permisos suficientes para ejecutar este comando]
+$onlyIf[$mentioned[1]!=;Menciona a alguien para ejecutar el comando]
+$onlyIf[$authorID!=$mentioned[1];No te puedes banear a ti mismo]
+$onlyIf[$mentioned[1]!=$serverOwner;No puedes banear al Owner]
+$ban[$mentioned[1]]
+$textSplit[$message; ]
+$title[🛑 Baneado 🛑]
+$color[ff0000]
+$description[**Usuario:** <@$mentioned[1]>
+ 
+**Razón:** $noMentionMessage]
+$footer[Moderador - $username#$discriminator[$authorID]]
+$allowMention

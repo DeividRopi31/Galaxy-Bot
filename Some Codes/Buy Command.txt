@@ -1,0 +1,331 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$if[$checkContains[$message;-;,;.]==false]
+$textSplit[$message; ]
+$if[$isNumber[$splitText[2]]==false]
+$var[cant;1]
+$else
+$var[cant;$splitText[2]]
+$endif
+
+
+$if[$splitText[1]==Pico]
+$if[$getVar[money;$authorID]>=$multi[200;$var[cant]]]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[200;$var[cant]]];$authorID]
+$setVar[pico;$sum[$getVar[pico;$authorID];$var[cant]];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] pico/s por $multi[200;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+$elseif[$splitText[1]==pico]
+$if[$getVar[money;$authorID]>=$multi[200;$var[cant]]]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[200;$var[cant]]];$authorID]
+$setVar[pico;$sum[$getVar[pico;$authorID];$var[cant]];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] pico/s por $multi[200;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+
+$elseif[$splitText[1]==Caña]
+$if[$getVar[money;$authorID]>=$multi[150;$var[cant]]]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[150;$var[cant]]];$authorID]
+$setVar[caña;$sum[$getVar[caña;$authorID];$var[cant]];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] caña/s por $multi[150;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+$elseif[$splitText[1]==caña]
+$if[$getVar[money;$authorID]>=$multi[150;$var[cant]]]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[150;$var[cant]]];$authorID]
+$setVar[caña;$sum[$getVar[caña;$authorID];$var[cant]];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] caña/s por $multi[150;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+
+$elseif[$splitText[1]==Licencia-minera]
+$if[$getVar[money;$authorID]>=750]
+$if[$getVar[li_pico;$authorID]<1]
+$setVar[money;$sub[$getVar[money;$authorID];750];$authorID]
+$setVar[li_pico;$sum[$getVar[li_pico;$authorID];1];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente una licencia por 750<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> Ya tienes esta licencia]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+$elseif[$splitText[1]==licencia-minera]
+$if[$getVar[money;$authorID]>=750]
+$if[$getVar[li_pico;$authorID]<1]
+$setVar[money;$sub[$getVar[money;$authorID];750];$authorID]
+$setVar[li_pico;$sum[$getVar[li_pico;$authorID];1];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente una licencia por 750<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> Ya tienes esta licencia]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+
+$elseif[$splitText[1]==Licencia-pesca]
+$if[$getVar[money;$authorID]>=500]
+$if[$getVar[li_cas;$authorID]<1]
+$setVar[money;$sub[$getVar[money;$authorID];500];$authorID]
+$setVar[li_caña;$sum[$getVar[li_caña;$authorID];1];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente una licencia por 500<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> Ya tienes esta licencia]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+$elseif[$splitText[1]==licencia-pesca]
+$if[$getVar[money;$authorID]>=500]
+$if[$getVar[li_cas;$authorID]<1]
+$setVar[money;$sub[$getVar[money;$authorID];500];$authorID]
+$setVar[li_caña;$sum[$getVar[li_caña;$authorID];1];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente una licencia por 500<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> Ya tienes esta licencia]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+
+$elseif[$splitText[1]==Lootbox-comun]
+$if[$getVar[money;$authorID]>=$multi[275;$var[cant]]]
+$textSplit[$getVar[lootbox;$authorID];|]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[275;$var[cant]]];$authorID]
+$setVar[lootbox;$sum[$splitText[1];$var[cant]]|$splitText[2]|$splitText[3]|$splitText[4];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] lootbox/es común/es por $multi[275;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+$elseif[$splitText[1]==lootbox-comun]
+$if[$getVar[money;$authorID]>=$multi[275;$var[cant]]]
+$textSplit[$getVar[lootbox;$authorID];|]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[275;$var[cant]]];$authorID]
+$setVar[lootbox;$sum[$splitText[1];$var[cant]]|$splitText[2]|$splitText[3]|$splitText[4];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] lootbox/es común/es por $multi[275;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+
+$elseif[$splitText[1]==Lootbox-rara]
+$if[$getVar[money;$authorID]>=$multi[500;$var[cant]]]
+$textSplit[$getVar[lootbox;$authorID];|]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[500;$var[cant]]];$authorID]
+$setVar[lootbox;$splitText[1]|$sum[$splitText[2];$var[cant]]|$splitText[3]|$splitText[4];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] lootbox/es rara/s por $multi[500;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+$elseif[$splitText[1]==lootbox-rara]
+$if[$getVar[money;$authorID]>=$multi[500;$var[cant]]]
+$textSplit[$getVar[lootbox;$authorID];|]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[500;$var[cant]]];$authorID]
+$setVar[lootbox;$splitText[1]|$sum[$splitText[2];$var[cant]]|$splitText[3]|$splitText[4];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] lootbox/es rara/s por $multi[500;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+
+$elseif[$splitText[1]==Lootbox-epica]
+$if[$getVar[money;$authorID]>=$multi[1000;$var[cant]]]
+$textSplit[$getVar[lootbox;$authorID];|]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[1000;$var[cant]]];$authorID]
+$setVar[lootbox;$splitText[1]|$splitText[2]|$sum[$splitText[3];$var[cant]]|$splitText[4];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] lootbox/es épica/s por $multi[1000;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+$elseif[$splitText[1]==lootbox-epica]
+$if[$getVar[money;$authorID]>=$multi[1000;$var[cant]]]
+$textSplit[$getVar[lootbox;$authorID];|]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[1000;$var[cant]]];$authorID]
+$setVar[lootbox;$splitText[1]|$splitText[2]|$sum[$splitText[3];$var[cant]]|$splitText[4];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] lootbox/es épica/s por $multi[1000;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+
+$elseif[$splitText[1]==Lootbox-legendaria]
+$if[$getVar[money;$authorID]>=$multi[2500;$var[cant]]]
+$textSplit[$getVar[lootbox;$authorID];|]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[2500;$var[cant]]];$authorID]
+$setVar[lootbox;$splitText[1]|$splitText[2]|$sum[$splitText[3];$var[cant]]|$splitText[4];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] lootbox/es legendaria/s por $multi[2500;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+$elseif[$splitText[1]==lootbox-legendaria]
+$if[$getVar[money;$authorID]>=$multi[2500;$var[cant]]]
+$textSplit[$getVar[lootbox;$authorID];|]
+$setVar[money;$sub[$getVar[money;$authorID];$multi[2500;$var[cant]]];$authorID]
+$setVar[lootbox;$splitText[1]|$splitText[2]|$sum[$splitText[3];$var[cant]]|$splitText[4];$authorID]
+$title[$nickname]
+$description[<:tic:1041324723369427084> Has comprado correctamente $var[cant] lootbox/es legendaria/s por $multi[2500;$var[cant]]<:moneda_galaxy:1032384306380816404>]
+$footer[Hora $addTimestamp]
+$footerIcon[$userAvatar[$authorID]]
+$color[123456] 
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> No tienes suficiente dinero en la cartera como para pagar la compra]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+
+
+
+
+
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> Lo sentimos, pero no hemos podido encontrar el artículo, compruebe si está escrito correctamente]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif
+$else
+$title[$nickname]
+$description[<:cruz:1041324706420240405> Has introducido erróneamente el comando]
+$footer[Hora $addTimestamp]
+$color[ff0010]
+$endif

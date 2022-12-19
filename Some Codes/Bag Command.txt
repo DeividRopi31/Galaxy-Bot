@@ -1,0 +1,23 @@
+Language: BDScript 2
+
+
+Code:
+
+$nomention
+$suppressErrors
+$cooldown[2s;]
+$newSelectMenu[inv;1;1;Selecciona una categoria]
+
+$addSelectMenuOption[inv;Herramientas;1-$authorID;Muestra las herramientas que posees;no;🛠]
+$addSelectMenuOption[inv;Licencias;2-$authorID;Muestra las licencias que posees;no;<:li_pi_galaxy:1032415262265327616>]
+$addSelectMenuOption[inv;Lootboxes;3-$authorID;Muestra tus lootboxes;no;<:loot_ra:1032056062800560208>]
+$addSelectMenuOption[inv;Minerales;4-$authorID;Muestra tus minerales;no;<:pico_galaxy:1032390648889888819>]
+$addSelectMenuOption[inv;Peces;5-$authorID;Muestra tus peces;no;<:cana_galaxy:1032390103554850846>]
+
+$title[Inventario de $username]
+$color[FFA420]
+$description[
+ 
+Este es tú inventario. 
+
+Desde aquí puedes seleccionar una categoria para ver los objetos de dicha categoría.]
